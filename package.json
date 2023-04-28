@@ -1,0 +1,48 @@
+{
+  "name": "ids-broker-lib",
+  "version": "0.1.0",
+  "description": "ids-broker-lib - A node library for the IDS Metadata Broker",
+  "author": "Michel Otto",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "import": "./build/index.js"
+    }
+  },
+  "engines": {
+    "node": ">=14.16"
+  },
+  "files": [
+    "build"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "DSC",
+    "Dataspace",
+    "Connector Controller"
+  ],
+  "scripts": {
+    "test": "mocha ./build/test/**/*.test.js",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "fix": "gts fix",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.1",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.13.0",
+    "chai": "^4.3.6",
+    "gts": "^3.1.0",
+    "mocha": "^10.0.0",
+    "openapi-typescript-codegen": "^0.23.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "node-fetch": "^3.2.8"
+  }
+}
